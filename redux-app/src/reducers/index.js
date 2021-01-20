@@ -1,9 +1,6 @@
 
 const initialState = {
-  name:"",
-  isFetching:false,
-  error:""
-
+  characters:[]
 }
 
 export const reducer =(state = initialState, action) => {
@@ -18,7 +15,9 @@ export const reducer =(state = initialState, action) => {
     case "FETCH_DATA_SUCCESS":
       return {  
         ...state,
-        name: action.payload,
+        // characters:[ ...state.characters, action.payload.map(char => {
+        //   return char
+        // })],
         isFetching: false,
         error:""
       }

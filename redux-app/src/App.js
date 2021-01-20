@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { getData } from './actions/index';
@@ -7,17 +7,12 @@ import { getData } from './actions/index';
 
 function App() {
 
-useEffect(() => {
-  getData();
-},[])
-
 const handleClick = () => {
   getData()
 }
   return (
     <div className="App">
-      I'm working
-      {/* https://rickandmortyapi.com/api/character */}
+     <h2>App Component Working</h2>
       <button onClick={handleClick}>Get Stuff</button>
     </div>
   );
@@ -25,9 +20,9 @@ const handleClick = () => {
 
 const mapStateToProps = state => {
   return {
-    id:"",
     name:"",
-    species:""
+    isFetching:false,
+    error:""
   }
 }
 

@@ -10,8 +10,8 @@ export const getData = () => dispatch => {
     axios
     .get('https://rickandmortyapi.com/api/character')
     .then(res => {
-      console.log(res)
       dispatch({ type:FETCH_DATA_SUCCESS, payload:res.results })
+      console.log(res)
     })
     .catch(err => {
       console.log(err)
