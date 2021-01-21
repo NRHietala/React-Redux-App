@@ -1,29 +1,15 @@
 import './App.css';
 import React from 'react';
-import { connect } from 'react-redux';
-
-import { getData } from './actions/index';
-
+import Gallery from './components/Gallery';
 
 function App() {
 
-const handleClick = () => {
-  getData()
-}
   return (
     <div className="App">
-     <h2>App Component Working</h2>
-      <button onClick={handleClick}>Get Stuff</button>
+     <h2>Click for the Magic!</h2>
+     <Gallery />
     </div>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    name:"",
-    isFetching:false,
-    error:""
-  }
-}
-
-export default connect (mapStateToProps, { getData })(App);
+export default App;
