@@ -15,12 +15,11 @@ export const reducer =(state = initialState, action) => {
         error:""
       }
     case "FETCH_DATA_SUCCESS":
-      debugger;
       console.log(state)
       return {  
         ...state,
         characters:[ ...state.characters, action.payload.map(char => {
-          return char
+          return char.name
         })],
         isFetching: false,
         error:""

@@ -5,7 +5,6 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const FETCH_DATA_FAILTURE = 'FETCH_DATA_FAILTURE';
 
 export const getData = () => dispatch => {
-  debugger;
   dispatch({ type: FETCH_DATA_START });
     
     axios
@@ -13,7 +12,6 @@ export const getData = () => dispatch => {
     .then(res => {
       dispatch({ type:FETCH_DATA_SUCCESS, payload:res.data.results })
       console.log(res.data.results)
-      debugger;
     })
     .catch(err => {
       console.log(err)

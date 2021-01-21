@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getData} from '../actions';
 
 
-const Gallery = ({ quote, isFetching, error, getData}) => {
+const Gallery = ({ characters, isFetching, error, getData}) => {
   useEffect(() => {
     getData()
   },[]);
@@ -18,13 +18,13 @@ const Gallery = ({ quote, isFetching, error, getData}) => {
   }
 
   if (isFetching) {
-    return <h2>Fetching quote for ya!</h2>;
+    return <h2>Here they come!</h2>;
   }
 
   return (
     <>
       <h2>Meet the Gang!</h2>
-      {props.characters.map(char => {
+      {characters.map(char => {
         return (
           <div>{char.name}</div>
         )
