@@ -1,14 +1,25 @@
 import './App.css';
 import React from 'react';
-import Gallery from './components/Gallery';
+import styled from 'styled-components';
 
-function App() {
+// components
+import Cast from './components/Cast';
+
+
+const StyledApp = styled.div`
+display:flex;
+flex-flow:column nowrap;
+background:grey;
+height: 100vh;
+`
+
+function App(props) {
 
   return (
-    <div className="App">
-     <h2>Click for the Magic!</h2>
-     <Gallery />
-    </div>
+    <StyledApp className="App">
+     <h2>Introducing</h2>
+     <Cast />
+    </StyledApp>
   );
 }
 
