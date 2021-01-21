@@ -11,6 +11,24 @@ flex-flow:column nowrap;
 justify-content:center;
 align-items:center;
 
+h1 {
+  font-family: 'Bigelow Rules', cursive;
+  text-align:center;
+  font-size: 10rem;
+  color: #01b4c6;
+  text-shadow: 2px 3px #97ce4c;
+}
+
+.reveal {
+  padding: 10px;
+  margin: 5px;
+  font-size: 2rem;
+  background: #01b4c6;
+  color:white;
+  border-radius: 15px;
+  border: 4px black solid;
+}
+
 .character {
   font-size: 20px;
   padding: 7px 5px;
@@ -22,18 +40,22 @@ const Cast = (props) => {
 
   console.log('Current State', props.state)
 
-  useEffect(() => {
-    props.getData()
-  }, [])
+  // useEffect(() => {
+  //   props.getData()
+  // }, [])
+
   return (
     <StyledCast>
-      <h2>Rick and Morty Cast</h2>
+      <h1>Rick and Morty Cast</h1>
       {props.isFetching ? <div>Loading Cast...</div> : null}
       {props.error ? <div style= {{ color: "red" }}>{props.error}</div> : null}
-      {/* <button onClick={props.getData}>Click to reveal cast!</button> */}
+      <button onClick={props.getData}
+      className="reveal"
+      >
+        Click to reveal cast!</button>
       {
         props.characters.map(character => (
-          <p className="character">{character.name}</p>
+          <p className="charcter">{character.name}</p>
         ))
       }
     </StyledCast>

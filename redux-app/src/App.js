@@ -21,7 +21,6 @@ function App(props) {
 
   return (
     <StyledApp className="App">
-     <h2>Introducing</h2>
      <Cast />
     </StyledApp>
   );
