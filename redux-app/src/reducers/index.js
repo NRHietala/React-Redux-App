@@ -11,14 +11,13 @@ export const reducer = (state = initialState, action) => {
     case FETCH_DATA_START:
       return {
         ...state,
-        characters:[],
         isFetching: true,
         error:""
       }
     case FETCH_DATA_SUCCESS:
       return {  
         ...state,
-        characters:[...action.payload],
+        characters: action.payload,
         isFetching: false,
         error:""
       }
