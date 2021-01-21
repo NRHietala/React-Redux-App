@@ -17,7 +17,7 @@ export const getData = () => dispatch => {
     })
     .catch(err => {
       console.log(err)
-      // dispatch({ type:FETCH_DATA_FAILTURE, payload: err.response.code})
+      dispatch({ type:FETCH_DATA_FAILTURE, payload: err.message})
     })
 }
 

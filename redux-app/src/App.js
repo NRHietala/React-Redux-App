@@ -11,6 +11,10 @@ display:flex;
 flex-flow:column nowrap;
 background:grey;
 height: 100vh;
+
+h2 {
+  color: green;
+}
 `
 
 function App(props) {
